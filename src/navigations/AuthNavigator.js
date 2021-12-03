@@ -1,51 +1,18 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import {Text, View} from 'react-native';
+import { LOGIN, REGISTER } from '../constants/routeNames';
+import Login from '../assets/screens/Login';
+import SignUp from '../assets/screens/Register';
 
-const Contacts = () => {
-    return (
-        <View>
-            <Text>Hi from Contacts</Text>
-        </View>
-    )
-}
-
-const ContactDetails = () => {
-    return (
-        <View>
-            <Text>Hi from Contact Details</Text>
-        </View>
-    )
-}
-
-const CreateContacts = () => {
-    return (
-        <View>
-            <Text>Hi from Create Contact</Text>
-        </View>
-    )
-}
-
-const Settings = () => {
-    return (
-        <View>
-            <Text>Hi from Settings</Text>
-        </View>
-    )
-}
-
-const HomeNavigator = () => {
-    const HomeStack = createStackNavigator();
+const AuthNavigator = () => {
+const AuthStack = createStackNavigator();
     return(
-    <HomeStack.Navigator>
-    <HomeStack.Screen name="Contact" component={Contacts}></HomeStack.Screen>
-    <HomeStack.Screen name="Contact Details" component={ContactDetails}></HomeStack.Screen>
-    <HomeStack.Screen name="Create Contact" component={CreateContact}></HomeStack.Screen>
-    <HomeStack.Screen name="Settings" component={Settings}></HomeStack.Screen>
-    </HomeStack.Navigator>
+    <AuthStack.Navigator>
+    <AuthStack.Screen name={LOGIN} component={Login}></AuthStack.Screen>
+    <AuthStack.Screen name={REGISTER} component={SignUp}></AuthStack.Screen>
+
+    </AuthStack.Navigator>
     );
 };
 
-export default HomeNavigator;
+export default AuthNavigator;

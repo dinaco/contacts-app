@@ -1,13 +1,21 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import {Text} from 'react-native';
+import React, {useContext} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import AuthNavigator from './AuthNavigator';
+import DrawerNavigator from './DrawerNavigator';
+import {GlobalContext} from '../assets/context/Provider';
 
 const AppNavContainer = () => {
-    return(
+  const isLoggedIn = false;
+
+  const state = useContext(GlobalContext);
+
+  console.log('state>>>', state);
+
+  return (
     <NavigationContainer>
-    <Text>Hello</Text>
+      {isLoggedIn ? <DrawerNavigator /> : <AuthNavigator />}
     </NavigationContainer>
-    );
+  );
 };
 
 export default AppNavContainer;
