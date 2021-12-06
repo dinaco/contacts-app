@@ -1,13 +1,13 @@
 import React from 'react';
-import GlobalProvider from './src/assets/context/Provider';
-import AppNavContainer from './src/navigations';
+import {StyleSheet, View, Text} from 'react-native';
+import Header from './src/components/Header';
 
-const App = () => {
-  return (
-    <GlobalProvider>
-      <AppNavContainer />
-    </GlobalProvider>
-  );
-};
-
-export default App;
+export default class App extends React.Component {
+  render() {
+    return (
+      <View>
+        <Header />
+      </View>
+    );
+  }
+}
