@@ -1,12 +1,24 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 
-const Header = () => {
+const Header = props => {
   return (
-    <View>
-      <Text>Hello!</Text>
+    <View style={style.container}>
+      <Text style={style.title}>{props.title}</Text>
     </View>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    backgroundColor: '#6ca2f7',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 50,
+    color: '#fff',
+  },
+});
 
 export default Header;
