@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
+// functional component example
 const Header = props => {
   return (
     <View style={style.container}>
