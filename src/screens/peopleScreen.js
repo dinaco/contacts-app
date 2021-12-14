@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import Header from '../components/Header';
 import PeopleList from '../components/peopleList';
 import axios from 'axios';
 
@@ -30,7 +29,6 @@ export default class PeopleScreen extends React.Component {
   render() {
     return (
       <View>
-        <Header title="People!" />
         {/* you have to pass peoplez={this.state.peoplez} so we can use the props in the peopleList.js file
         otherwise peoplez will be undefined in peopleList.js file, because the state is being created in the App.js file and
         in the peopleList.js we are using this state and even changing it using setState.
