@@ -3,15 +3,16 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {CapitalLetter} from '../util';
 
 const PeopleListItems = props => {
-  const {peopley} = props;
+  const {peopley, navigateToPeopleScreen} = props;
   const {
     name: {title, first, last},
     picture: {thumbnail},
   } = peopley;
   return (
-    <TouchableOpacity onPress={() => console.log('touchable')}>
+    // using ({peopley}) is the same as using (peopley:peopley)
+    <TouchableOpacity onPress={() => navigateToPeopleScreen({peopley})}>
       <View style={styles.line}>
-        <Image style={styles.pic} source={{uri: thumbnail}} />
+        <Image style={styles.avatar} source={{uri: thumbnail}} />
         <Text style={styles.lineText}>{`${CapitalLetter(title)} ${CapitalLetter(
           first,
         )} ${CapitalLetter(last)}`}</Text>
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     flex: 7,
   },
-  pic: {
+  avatar: {
     /* aspectRatio keeps the image from getting distorted */
     aspectRatio: 1,
     width: 40,
