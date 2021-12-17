@@ -20,7 +20,7 @@ export default class PeopleScreen extends React.Component {
     this.setState({loading: true});
     axios({
       method: 'get',
-      url: `https://randomuser.me/api/?nat=br&results=150`,
+      url: `https://randomuser.me/api/?results=150`,
     })
       .then(response => {
         const {results} = response.data;
